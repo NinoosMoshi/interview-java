@@ -1,0 +1,655 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Consolas;}{\f2\fnil Consolas;}}
+{\colortbl ;\red255\green0\blue0;\red127\green0\blue85;\red0\green0\blue0;\red106\green62\blue62;\red0\green0\blue192;\red42\green0\blue255;\red0\green176\blue80;\red212\green212\blue212;\red240\green216\blue168;\red63\green127\blue95;\red232\green242\blue254;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs48\lang9 Array\par
+
+\pard\sa200\sl276\slmult1\b0\fs24\par
+\cf1\fs32 *find duplicate elements in an Array\par
+\ul ex1:\ulnone\b\par
+\cf2\f1\fs24\lang1033       \f2\lang9 int\cf3\b0 [] \cf4 arr\cf3  = \{10,3,5,10,3,2,8,8\}; \cf0\par
+\cf3\tab  \cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 i\cf3  = 0; \cf4 i\cf3  < \cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab\cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 j\cf3  = \cf4 i\cf3 +1; \cf4 j\cf3  < \cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 j\cf3 ++) \{\cf0\par
+\cf3\tab\tab\tab\cf2\b if\cf3\b0  (\cf4 arr\cf3 [\cf4 i\cf3 ] == \cf4 arr\cf3 [\cf4 j\cf3 ]) \{\cf0\par
+\cf3\tab\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "duplicate Element is: "\cf3 +\cf4 arr\cf3 [\cf4 i\cf3 ]);\cf0\par
+\cf3\tab\tab\tab\}\tab\tab\cf0\par
+\cf3\tab\tab\}\cf0\par
+\cf3\tab\}\cf0\f0\par
+\par
+\cf1\ul\fs32 ex2\par
+\cf7\ulnone\fs24 Set:\par
+1- arrange all the elements ascending(small to big number).\par
+2-remove similar number(keep one and remove second one).\par
+\cf0\par
+\cf2\b\f1\lang1033      \f2\lang9 int\cf3\b0 [] \cf4 arr\cf3  = \{10,3,5,10,3,2,8,8\};\tab\cf0\par
+\cf3\tab Set<Integer> \cf4 set\cf3  = \cf2\b new\cf3\b0  HashSet<>();\cf0\par
+\cf3\tab\cf2\b for\cf3\b0  (Integer \cf4 number\cf3  : \cf4 arr\cf3 ) \{\cf0\par
+\cf3\tab\tab\cf2\b if\cf3\b0 (!\cf4 set\cf3 .add(\cf4 number\cf3 )) \{\cf0\par
+\cf3\tab\tab System.\cf5\b\i out\cf3\b0\i0 .\highlight8 println\highlight0 (\cf6 "duplicate Element is: "\cf3 +\cf4 number\cf3 );\cf0\par
+\cf3\tab\tab\tab\}\cf0\par
+\cf3\tab\tab\}\cf0\par
+\cf3\tab\tab\par
+\par
+\cf1\f0\fs32 *remove duplicate elements from Array by using set.\par
+\cf2\b\f1\fs24\lang1033       \f2\fs20\lang9 int\cf3\b0 [] \cf4 arr\cf3  = \{4,1,2,7,5,2,4\};       \cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println(Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3         \cf0\par
+\cf3         Set<Integer> \cf4 set\cf3  = \cf2\b new\cf3\b0  HashSet<>();\cf0\par
+\cf3         \cf2\b for\cf3\b0 (Integer \cf4 result\cf3 :\cf4 arr\cf3 )\{\cf0\par
+\cf3         \tab\cf4 set\cf3 .add(\cf4 result\cf3 );\cf0\par
+\cf3         \f1\lang1033\}\f2\lang9    \cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 set\cf3 );\cf0\f0\par
+\fs24\par
+\cf3\f2\par
+\cf1\f0\fs32 *remove duplicate elements from Array.\par
+\cf3\f2\fs20  \f1\lang1033      \cf2\b\f2\lang9 int\cf3\b0 [] \cf4 arr\cf3  = \{4,1,2,7,5,2,4\};             \cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println(Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3         \cf2\b int\cf3\b0  \cf4 temp\cf3 ;\cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab\cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =\cf4 i\cf3 +1; \cf4 j\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3         \tab\tab\cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 arr\cf3 [\cf4 j\cf3 ]) \{\cf0\par
+\cf3         \tab\tab\tab\cf4 temp\cf3  = \cf4 arr\cf3 [\cf4 j\cf3 ];\cf0\par
+\cf3         \tab\tab\tab\cf4 arr\cf3 [\cf4 j\cf3 ] = \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3         \tab\tab\tab\cf4 arr\cf3 [\cf4 i\cf3 ] = \cf4 temp\cf3 ;\tab\cf0\par
+\cf3         \tab\tab\}\tab\cf0\par
+\cf3         \tab\}\cf0\par
+\cf3         \tab\}\cf0\par
+\cf3         \cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b int\cf3\b0 [] \cf4 arr2\cf3  = \cf2\b new\cf3\b0  \cf2\b int\cf3\b0 [\cf4 arr\cf3 .\cf5 length\cf3 ];\cf0\par
+\cf3         \cf4 arr2\cf3  = \cf4 arr\cf3 ;\cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println(Arrays.\i toString\i0 (\cf4 arr2\cf3 ));\cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b int\cf3\b0 [] \cf4 arr3\cf3  = \cf2\b new\cf3\b0  \cf2\b int\cf3\b0 [\cf4 arr2\cf3 .\cf5 length\cf3 ];\cf0\par
+\cf3         \cf4 arr3\cf3  = \cf4 arr2\cf3 ;     \cf0\par
+\cf3         \cf2\b int\cf3\b0  \cf4 L\cf3  = \cf4 arr2\cf3 .\cf5 length\cf3 ;\cf0\par
+\cf3         \cf2\b int\cf3\b0  \cf4 k\cf3  = 0; \cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 L\cf3 -1; \cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab\cf2\b if\cf3\b0 (\cf4 arr2\cf3 [\cf4 i\cf3 ] != \cf4 arr2\cf3 [\cf4 i\cf3 +1]) \{\cf0\par
+\cf3         \tab\tab\cf4 arr3\cf3 [\cf4 k\cf3 ++] = \cf4 arr2\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3         \tab\}\cf0\par
+\cf3         \tab    \cf0\par
+\cf3         \}\cf0\par
+\cf3         \cf4 arr3\cf3 [\cf4 k\cf3 ++]=\cf4 arr2\cf3 [\cf4 L\cf3 -1]; \cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 k\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3     \tab\tab System.\cf5\b\i out\cf3\b0\i0 .print(\cf4 arr3\cf3 [\cf4 i\cf3 ]);\cf0\par
+\cf3     \tab\cf0\par
+\cf3     \tab\}\cf0\par
+\cf3\f1\fs24\lang1033 ans:\par
+\f2 [4, 1, 2, 7, 5, 2, 4]\cf0\par
+\cf3 [1, 2, 2, 4, 4, 5, 7]\cf0\par
+\cf3 12457\par
+\par
+\par
+\par
+\cf1\f1 *\f2 Find Sum of Elements in Array\par
+\cf3  \f1      \cf2\b\f2\fs20 int\cf3\b0 [] \cf4 arr\cf3  = \{3,2,5,4,6\};\cf0\par
+\cf3         \cf2\b int\cf3\b0  \cf4\highlight9 sum\cf3\highlight0 =0;\cf0\par
+\cf3         \cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 temp\cf3  : \cf4 arr\cf3 ) \{\cf0\par
+\cf3\tab\f1     \cf4\highlight9\f2 sum\cf3\highlight0  = \cf4\highlight8 sum\cf3\highlight0  + \cf4 temp\cf3 ;\cf0\par
+\cf3\tab\tab\}\cf0\par
+\cf3\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf4\highlight8 sum\cf3\highlight0 );\par
+\cf0\f0\fs24\lang9\par
+ans:\par
+20\par
+\par
+\cf1 *Print Even & Odd Numbers from an Array\cf0\par
+\cf3\f2\fs20  \f1\lang1033        \cf2\b\f2\lang9 int\cf3\b0 [] \cf4 arr\cf3  = \{3,2,5,4,6,7\};\cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .print(\cf6 "Even number: "\cf3 );\cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 temp\cf3 :\cf4 arr\cf3 ) \{\cf0\par
+\cf3         \tab\cf2\b if\cf3\b0 (\cf4 temp\cf3 %2 == 0) \{\cf0\par
+\cf3         \tab\tab System.\cf5\b\i out\cf3\b0\i0 .print(\cf4 temp\cf3  + \cf6 " "\cf3 );\cf0\par
+\cf3         \tab\}\cf0\par
+\cf3         \}\cf0\par
+\cf3         \cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3         \cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .print(\cf6 "Odd number : "\cf3 );\cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 temp\cf3 :\cf4 arr\cf3 ) \{\cf0\par
+\cf3         \tab\cf2\b if\cf3\b0 (\cf4 temp\cf3 %2 != 0) \{\cf0\par
+\cf3         \tab\tab System.\cf5\b\i out\cf3\b0\i0 .print(\cf4 temp\cf3  + \cf6 " "\cf3 );\cf0\par
+\cf3         \tab\}\cf0\par
+\cf3         \}\cf0\f0\par
+\fs24\par
+ans:\par
+\cf3\f2 Even number: 2 4 6 \cf0\par
+\cf3 Odd number : 3 5 7 \par
+\par
+\par
+\cf1\f1\lang1033 *How To Check The Equality Of Two Arrays\cf3\f2\lang9\par
+\cf2\b\f1\lang1033       \f2\lang9 int\cf3\b0 [] \cf4 arr1\cf3  = \{2,4,6,8\};\cf0\par
+\cf3       \cf2\b int\cf3\b0 [] \cf4 arr2\cf3  = \{2,4,6,8\};\cf0\par
+\cf3\f1\lang1033      \f2\lang9  \cf2\b boolean\cf3\b0  \cf4 state\cf3  = Arrays.\i equals\i0 (\cf4 arr1\cf3 , \cf4 arr2\cf3 );\cf0\par
+\cf3       \cf2\b if\cf3\b0 (\cf4 state\cf3 )\{\cf0\par
+\cf3         System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "Arrays are equal"\cf3 );\cf0\par
+\cf3        \}\cf0\par
+\cf3        \cf2\b else\cf3\b0  \{\cf0\par
+\cf3         \tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "Arrays are not equal"\cf3 );\cf0\par
+\cf3         \}\par
+\par
+\f1\lang1033 ans:\par
+\f2 Arrays are equal\par
+\par
+\par
+\f1 Approach 2:\par
+\cf2\b\fs20       \f2 int\cf3\b0 [] \cf4 arr1\cf3  = \{2,4,6,8\};\cf0\par
+\cf3       \cf2\b int\cf3\b0 [] \cf4 arr2\cf3  = \{2,4,6,8\};\par
+\cf0\par
+\cf3         \cf2\b boolean\cf3\b0  \cf4 state\cf3  = \cf2\b true\cf3\b0 ;\cf0\par
+\cf3         \cf2\b if\cf3\b0 (\cf4 arr1\cf3 .\cf5 length\cf3  == \cf4 arr2\cf3 .\cf5 length\cf3 ) \{\cf0\par
+\cf3         \tab\cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 < \cf4 arr1\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab\tab\cf2\b if\cf3\b0 (\cf4 arr1\cf3 [\cf4 i\cf3 ] != \cf4 arr2\cf3 [\cf4 i\cf3 ])\{\cf0\par
+\cf3         \tab\tab\tab\cf4 state\cf3  = \cf2\b false\cf3\b0 ;\cf0\par
+\cf3         \tab\tab                       \}\cf0\par
+\cf3         \tab                                    \}\cf0\par
+\cf3                                         \}\cf0\par
+\cf3         \cf2\b else\cf3\b0  \{\cf0\par
+\cf3         \tab\cf4 state\cf3  = \cf2\b false\cf3\b0 ;\cf0\par
+\cf3         \}\cf0\par
+\cf3         \cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b if\cf3\b0 (\cf4 state\cf3  == \cf2\b true\cf3\b0 ) \{\cf0\par
+\cf3         \tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "Arrays are equal"\cf3 );\cf0\par
+\cf3         \}\cf2\b else\cf3\b0  \{\cf0\par
+\cf3         \tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "Arrays are not equal"\cf3 );\cf0\par
+\cf3         \}\f1\lang9\par
+\fs24\lang1033 ans:\par
+\f2 Arrays are equal\par
+\f1\lang9\par
+\par
+\cf1\f0 * Find Largest and Smallest Number\cf3\f1\par
+\f2\fs20  \cf2\b int\cf3\b0 [] \cf4 arr\cf3  = \{5, 1, 2, 6, 7, 8, 2, -3, 9, 4\};\cf0\par
+\cf3\tab\tab  \cf0\par
+\cf3          \cf2\b int\cf3\b0  \cf4 small\cf3 =\cf4 arr\cf3 [0];\cf0\par
+\cf3          \cf2\b int\cf3\b0  \cf4 large\cf3  = \cf4 arr\cf3 [0];\cf0\par
+\cf3\f1\lang1033        \f2\lang9\tab\cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab\tab\cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ]>\cf4 large\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab\tab\cf4 large\cf3 =\cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab\tab\tab\}\cf0\par
+\cf3\tab\tab\tab\tab\cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ]<\cf4 small\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab\tab\cf4 small\cf3 =\cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab\tab\tab\tab\}\cf0\par
+\cf3\tab\tab\}\cf0\par
+\cf3\tab\tab\cf0\par
+\cf3\tab\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "largest number is: "\cf3  + \cf4 large\cf3 ); \cf0\par
+\cf3\tab\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "Smallest number is: "\cf3 + \cf4 small\cf3 );\par
+\par
+\f1\lang1033 ans:\par
+\f2\fs24 largest number is: 9\cf0\par
+\cf3 Smallest number is: -3\f1\fs20\lang9  \cf0\f0\par
+\fs24\par
+\cf1 * Find Largest Of 3 Numbers\par
+\cf3\f2\tab  \cf2\b\fs20 int\cf3\b0 [] \cf4 arr\cf3  = \{2,4,7,9,4,5,6,9,8\};\cf0\par
+\cf3\tab       System.\cf5\b\i out\cf3\b0\i0 .println(Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab       \cf0\par
+\cf3\tab       \cf10 /* There should be\cf0\par
+\cf10\tab       \ul atleast\ulnone  three elements */\cf0\par
+\cf3\tab       \cf2\b if\cf3\b0  (\cf4 arr\cf3 .\cf5 length\cf3  < 3)\cf0\par
+\cf3\tab       \{\cf0\par
+\cf3\tab           System.\cf5\b\i out\cf3\b0\i0 .printf(\cf6 " Invalid Input "\cf3 );\cf0\par
+\cf3\tab           \cf2\b return\cf3\b0 ;\cf0\par
+\cf3\tab       \}\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab       \cf10 // Find first\cf0\par
+\cf3\tab       \cf10 // largest element\cf0\par
+\cf3\tab       \cf2\b int\cf3\b0  \cf4 first\cf3  = \cf4 arr\cf3 [0];\cf0\par
+\cf3\tab       \cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 i\cf3  = 1;\cf4 i\cf3  < \cf4 arr\cf3 .\cf5 length\cf3  ; \cf4 i\cf3 ++)\cf0\par
+\cf3\tab           \cf2\b if\cf3\b0  (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 first\cf3 )\cf0\par
+\cf3\tab               \cf4 first\cf3  = \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab       \cf10 // Find second\cf0\par
+\cf3\tab       \cf10 // largest element\cf0\par
+\cf3\tab       \cf2\b int\cf3\b0  \cf4 second\cf3  = Integer.\cf5\b\i MIN_VALUE\cf3\b0\i0 ;\cf0\par
+\cf3\tab       \cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 i\cf3  = 0;\cf4 i\cf3  < \cf4 arr\cf3 .\cf5 length\cf3  ; \cf4 i\cf3 ++)\cf0\par
+\cf3\tab           \cf2\b if\cf3\b0  (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 second\cf3  &&\cf0\par
+\cf3\tab               \cf4 arr\cf3 [\cf4 i\cf3 ] < \cf4 first\cf3 )\cf0\par
+\cf3\tab               \cf4 second\cf3  = \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab       \cf10 // Find third\cf0\par
+\cf3\tab       \cf10 // largest element\cf0\par
+\cf3\tab       \cf2\b int\cf3\b0  \cf4 third\cf3  = Integer.\cf5\b\i MIN_VALUE\cf3\b0\i0 ;\cf0\par
+\cf3\tab       \cf2\b for\cf3\b0  (\cf2\b int\cf3\b0  \cf4 i\cf3  = 0;\cf4 i\cf3  < \cf4 arr\cf3 .\cf5 length\cf3  ; \cf4 i\cf3 ++)\cf0\par
+\cf3\tab           \cf2\b if\cf3\b0  (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 third\cf3  &&\cf0\par
+\cf3\tab               \cf4 arr\cf3 [\cf4 i\cf3 ] < \cf4 second\cf3 )\cf0\par
+\cf3\tab               \cf4 third\cf3  = \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab       \cf0\par
+\cf3\tab       System.\cf5\b\i out\cf3\b0\i0 .printf(\cf6 "The first Largest "\cf3  +\cf0\par
+\cf3                   \cf6 "element is %d\\n"\cf3 , \cf4 first\cf3 );\cf0\par
+\cf3\tab       \cf0\par
+\cf3\tab       System.\cf5\b\i out\cf3\b0\i0 .printf(\cf6 "The second Largest "\cf3  +\cf0\par
+\cf3                   \cf6 "element is %d\\n"\cf3 , \cf4 second\cf3 );\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab       System.\cf5\b\i out\cf3\b0\i0 .printf(\cf6 "The third Largest "\cf3  +\cf0\par
+\cf3\tab                     \cf6 "element is %d\\n"\cf3 , \cf4 third\cf3 );\cf0\f0\par
+\fs24\par
+ans:\par
+\cf3\f2 [2, 4, 7, 9, 4, 5, 6, 9, 8]\cf0\par
+\cf3 The first Largest element is 9\cf0\par
+\cf3 The second Largest element is 8\cf0\par
+\cf3 The third Largest element is 7\par
+\par
+\cf0\f0\par
+\cf1 *sorting array\par
+\cf2\b\f2\fs20 int\cf3\b0  \cf4 arr\cf3 [] = \{ 2,4,1,3,6,5\};\cf0\par
+\cf3\tab     System.\cf5\b\i out\cf3\b0\i0 .println(Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab     \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab     \cf0\par
+\cf3       \cf2\b int\cf3\b0  \cf4 temp\cf3 ;\cf0\par
+\cf3       \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3       \tab\cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =\cf4 i\cf3 +1; \cf4 j\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3       \tab\tab\cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 arr\cf3 [\cf4 j\cf3 ]) \{\cf0\par
+\cf3       \tab\tab\tab\cf4 temp\cf3  = \cf4 arr\cf3 [\cf4 j\cf3 ];\cf0\par
+\cf3       \tab\tab\tab\cf4 arr\cf3 [\cf4 j\cf3 ] = \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3       \tab\tab\tab\cf4 arr\cf3 [\cf4 i\cf3 ] = \cf4 temp\cf3 ;\tab\cf0\par
+\cf3       \tab\tab\}\tab\cf0\par
+\cf3       \tab\}\cf0\par
+\cf3       \tab\}\cf0\par
+\cf3       \cf0\par
+\cf3       System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array sort ascending:"\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\par
+\par
+\par
+\f1\lang1033 Approach 2\par
+\b Arrays.sort(Arrays.toString(arr))\cf0\b0\f0\lang9\par
+\fs24\par
+\cf1 *Find Missing Number in an Array\par
+\cf3\f2\fs20  \cf2\b int\cf3\b0 [] \cf4 arr\cf3  = \{4,3,7,2,6\};\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 small\cf3  = \cf4 arr\cf3 [0];\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 large\cf3  = \cf4 arr\cf3 [0];\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4\ul sum\cf3\ulnone  = 0;\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf10 //find smallest number\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 < \cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ] < \cf4 small\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab   \cf4 small\cf3 =\cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab\tab   \}\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "smallest number is: "\cf3 + \cf4 small\cf3 );\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf10 //find largest number\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 < \cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ] > \cf4 large\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab   \cf4 large\cf3 =\cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab\tab   \}\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "largest number is: "\cf3 + \cf4 large\cf3 );\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf10 //find the sum of array\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 sum1\cf3 =0;\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf4 sum1\cf3  = \cf4 sum1\cf3  + \cf4 arr\cf3 [\cf4 i\cf3 ];\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "The sum of the numbers is: "\cf3 +\cf4 sum1\cf3 );\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf10 //find the sum of array,range between small and large\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 sum2\cf3 =0;\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =\cf4 small\cf3 ; \cf4 i\cf3 <=\cf4 large\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf4 sum2\cf3  = \cf4 sum2\cf3  + \cf4 i\cf3 ;\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "The sum of the range betwee small and large is : "\cf3 +\cf4 sum2\cf3 );\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf10 //find the different between sum1 and sum2\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 result\cf3  = \cf4 sum2\cf3  - \cf4 sum1\cf3 ;\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "The missing number is: "\cf3 + \cf4 result\cf3 );\cf0\f0\par
+\par
+\par
+\cf1 *Find Missing \b Numbers\b0  in an Array\par
+\cf3\f2  \cf2\b int\cf3\b0  \cf4 arr\cf3 [] = \{ 15 ,6 , 7, 10, 11, 13 \};\cf0\par
+\cf3\tab     \cf0\par
+\par
+\cf3\tab     System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array without sort:  "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab     \cf0\par
+\cf3\tab     \cf10 //sort array ascending\cf0\par
+\cf3\tab     Arrays.\i sort\i0 (\cf4 arr\cf3 );\cf0\par
+\cf3\tab     System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array with ascending:"\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab\cf0\par
+\cf3\tab   \cf10 //sort array ascending without Arrays.sort(\ul arr\ulnone )\tab     \cf0\par
+\cf10 //        \ul int\ulnone  t1;\cf0\par
+\cf10 //        for(\ul int\ulnone  i=0; i<arr.length;i++) \{\cf0\par
+\cf10 //        \tab for(\ul int\ulnone  j=i+1; j<arr.length;j++) \{\cf0\par
+\cf10 //        \tab\tab if(\ul arr\ulnone [i] > \ul arr\ulnone [j]) \{\cf0\par
+\cf10 //        \tab\tab\tab t1 = \ul arr\ulnone [j];\cf0\par
+\cf10 //        \tab\tab\tab\ul arr\ulnone [j] = \ul arr\ulnone [i];\cf0\par
+\cf10 //        \tab\tab\tab\ul arr\ulnone [i] = t1;\tab\cf0\par
+\cf10 //        \tab\tab\}\tab\cf0\par
+\cf10 //        \tab\}\cf0\par
+\cf10 //        \tab\}\cf0\par
+\cf10 //        \cf0\par
+\cf10 //        System.out.println("array sort ascending:"+Arrays.toString(\ul arr\ulnone ));\cf0\par
+\par
+\cf3\tab     \cf0\par
+\cf3\tab         \cf0\par
+\cf3\tab     \cf2\b int\cf3\b0  \cf4 temp\cf3  = \cf4 arr\cf3 [0];\cf0\par
+\cf3\tab  \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab     System.\cf5\b\i out\cf3\b0\i0 .print(\cf6 "missing numbers are: "\cf3 );\cf0\par
+\cf3\tab     \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3  = 0; \cf4 i\cf3  < \cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++)\cf0\par
+\cf3\tab     \{\cf0\par
+\cf3\tab         \cf2\b if\cf3\b0  (\cf4 arr\cf3 [\cf4 i\cf3 ] != \cf4 temp\cf3 )\cf0\par
+\cf3\tab         \{ \cf0\par
+\cf3\tab             \cf10 // missing elements\cf0\par
+\cf3\tab             \cf2\b while\cf3\b0  (\cf4 temp\cf3  < \cf4 arr\cf3 [\cf4 i\cf3 ] - \cf4 i\cf3 )\cf0\par
+\cf3\tab             \{\cf0\par
+\cf3\tab                 System.\cf5\b\i out\cf3\b0\i0 .print((\cf4 i\cf3  + \cf4 temp\cf3 ) + \cf6 " "\cf3 );\cf0\par
+\cf3\tab                 \cf4 temp\cf3 ++;\cf0\par
+\cf3\tab             \}\cf0\par
+\cf3\tab         \}    \cf0\par
+\cf3        \}\cf0\f0\par
+\fs24\par
+ans:\par
+\cf3\f2 array without sort:  [15, 6, 7, 10, 11, 13]\cf0\par
+\cf3 array with ascending:[6, 7, 10, 11, 13, 15]\cf0\par
+\cf3 missing numbers are: 8 9 12 14 \cf0\f0\par
+\par
+\par
+\par
+\cf1 *Searching an Element in Array | Linear Search(search by each one)\cf0\par
+\cf3\f2   \cf2\b\fs20 int\cf3\b0  \cf4 arr\cf3 [] = \{ 15 ,6 , 7, 10, 11, 13 \};\cf0\par
+\cf3\tab     \cf0\par
+\cf3         \cf2\b int\cf3\b0  \cf4 num\cf3 =10;\cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b boolean\cf3\b0  \cf4 flag\cf3 =\cf2\b false\cf3\b0 ;\cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 arr\cf3 .\cf5 length\cf3 ; \cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab\cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 i\cf3 ] == \cf4 num\cf3 ) \{\cf0\par
+\cf3         \tab\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 i\cf3 );\cf0\par
+\cf3         \tab\tab\cf4 flag\cf3 =\cf2\b true\cf3\b0 ;\cf0\par
+\cf3         \tab\tab\cf2\b break\cf3\b0 ;\cf0\par
+\cf3         \tab\} \tab\cf0\par
+\cf3         \}\cf0\par
+\cf3         \cf0\par
+\cf3         \cf2\b if\cf3\b0 (\cf4 flag\cf3  == \cf2\b false\cf3\b0 ) \{\cf0\par
+\cf3         \tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "not found a number"\cf3 );\cf0\par
+\cf3         \}\cf0\f0\par
+\fs24\par
+ans:\par
+3\par
+\par
+\par
+\par
+\cf1 *Searching an Element in Array | Binary Search(take the middel number and compare if it's lower or larger)\par
+\cf3\f2\fs20  \fs24  \cf2\b\fs20 int\cf3\b0 [] \cf4 arr\cf3  = \{10,20,30,40,50,60,70\};\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab    \cf2\b int\cf3\b0  \cf4 low\cf3  = 0;\cf0\par
+\cf3\tab    \cf2\b int\cf3\b0  \cf4 high\cf3  = \cf4 arr\cf3 .\cf5 length\cf3 -1;\cf0\par
+\cf3\tab    \cf2\b int\cf3\b0  \cf4 mid\cf3  = 0;\cf0\par
+\cf3\tab    \cf2\b int\cf3\b0  \cf4 target\cf3  = 30;\cf0\par
+\cf3\tab    System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 high\cf3 );\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab    \cf4 mid\cf3  = (\cf4 low\cf3 +\cf4 high\cf3 )/2;\cf0\par
+\cf3\tab    \cf2\b while\cf3\b0 (\cf4 low\cf3  <= \cf4 high\cf3 ) \{\cf0\par
+\cf3\tab\tab    \cf4 mid\cf3  = (\cf4 low\cf3 +\cf4 high\cf3 )/2;\cf0\par
+\cf3\tab\tab    \cf0\par
+\cf3\tab\tab    \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 mid\cf3 ] == \cf4 target\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab    System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "value found at index: "\cf3 + \cf4 mid\cf3 );\cf0\par
+\cf3\tab\tab\tab    \cf2\b break\cf3\b0 ;\cf0\par
+\cf3\tab\tab    \}\cf0\par
+\cf3\tab\tab    \cf2\b else\cf3\b0  \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 mid\cf3 ] > \cf4 target\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab    \cf4 high\cf3  = \cf4 mid\cf3  -1;\cf0\par
+\cf3\tab\tab    \}\cf0\par
+\cf3\tab\tab    \cf2\b else\cf3\b0  \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 mid\cf3 ] < \cf4 target\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab    \cf4 low\cf3  = \cf4 mid\cf3  + 1;\cf0\par
+\cf3\tab\tab    \}\cf0\par
+\cf3\tab\tab    \cf0\par
+\cf3\tab    \}\cf0\par
+\cf3\tab    \cf0\par
+\cf3\tab   \cf2\b if\cf3\b0 (\cf4 low\cf3  > \cf4 high\cf3 ) \{\cf0\par
+\cf3\tab\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "element not found in array"\cf3 );\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\fs24\tab     \cf1\f0\par
+\cf0\par
+\cf1 *Sort Elements in Array | Bubble Sort\cf0\par
+\cf3\f2\fs20  \cf2\b int\cf3\b0 [] \cf4 arr\cf3  = \{4,2,3,6,5,1\};\cf0\par
+\cf3\tab  System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array before sorting: "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab     \cf0\par
+\cf3\tab    \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 < \cf4 arr\cf3 .\cf5 length\cf3  -1; \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab  \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =0; \cf4 j\cf3 <\cf4 arr\cf3 .\cf5 length\cf3  -1; \cf4 j\cf3 ++) \{\cf0\par
+\cf3\tab\tab\tab  \cf2\b if\cf3\b0 (\cf4 arr\cf3 [\cf4 j\cf3 ] > \cf4 arr\cf3 [\cf4 j\cf3 +1]) \{\cf0\par
+\cf3\tab\tab\tab\tab  \cf2\b int\cf3\b0  \cf4 temp\cf3  = \cf4 arr\cf3 [\cf4 j\cf3 +1];\cf0\par
+\cf3\tab\tab\tab\tab  \cf4 arr\cf3 [\cf4 j\cf3 +1] = \cf4 arr\cf3 [\cf4 j\cf3 ];\cf0\par
+\cf3\tab\tab\tab\tab  \cf4 arr\cf3 [\cf4 j\cf3 ] = \cf4 temp\cf3 ;\cf0\par
+\cf3\tab\tab\tab  \}\cf0\par
+\cf3\tab\tab  \}\cf0\par
+\cf3\tab    \}\cf0\par
+\cf3\tab    System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array after sorting:  "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\fs24           \cf0\f0\par
+\fs22\par
+\cf1 * Sort Elements in Array Using Built-in Methods\cf0\par
+\cf3\f2\fs20  Integer[] \cf4 arr\cf3  = \{4,2,3,6,5,1\};\cf0\par
+\cf3\tab  System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array before sorting: "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab     \cf0\par
+\cf3\tab   Arrays.\i sort\i0 (\cf4 arr\cf3 );\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array after sorting:  "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   Arrays.\i sort\i0 (\cf4 arr\cf3 ,Collections.\i reverseOrder\i0 ());\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "sort array then reverse:"\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\f0\par
+\fs22\par
+ans:\par
+\cf3\f2\fs20 array before sorting: [4, 2, 3, 6, 5, 1]\cf0\par
+\cf3 array after sorting:  [1, 2, 3, 4, 5, 6]\cf0\par
+\cf3 sort array then reverse:[6, 5, 4, 3, 2, 1]\cf0\f0\par
+\fs22\par
+\cf1 * reverse array\cf0\par
+\cf3\f2\fs20  Integer[] \cf4 arr\cf3  = \{4,2,3,6,5,1\};\cf0\par
+\cf3\tab  System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array before sorting: "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab     \cf0\par
+\cf3\tab   Arrays.\i sort\i0 (\cf4 arr\cf3 );\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "array after sorting:  "\cf3 +Arrays.\i toString\i0 (\cf4 arr\cf3 ));\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 l\cf3  = \cf4 arr\cf3 .\cf5 length\cf3 ;\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =\cf4 l\cf3 -1; \cf4 i\cf3 >=0; \cf4 i\cf3 --) \{\cf0\par
+\cf3\tab\tab   System.\cf5\b\i out\cf3\b0\i0 .print(\cf4 arr\cf3 [\cf4 i\cf3 ]);\cf0\par
+\cf3\tab   \}\cf0\f0\par
+\fs22\par
+ans:\par
+\cf3\f2\fs24 array before sorting: [4, 2, 3, 6, 5, 1]\cf0\par
+\cf3 array after sorting:  [1, 2, 3, 4, 5, 6]\cf0\par
+\cf3 654321\cf0\f0\fs22\par
+\par
+\par
+\par
+\cf1 *reverce String\cf0\fs20\par
+\cf3\f2   String \cf4 name\cf3  = \cf6 "abcd"\cf3 ;\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "original string: "\cf3 +\cf4 name\cf3 );\cf0\par
+\cf3\tab   \cf2\b char\cf3\b0  \cf4 ch\cf3 ;\cf0\par
+\cf3\tab   String \cf4 str\cf3 =\cf6 ""\cf3 ;\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 name\cf3 .length(); \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf4 ch\cf3  = \cf4 name\cf3 .charAt(\cf4 i\cf3 );\cf0\par
+\cf3\tab\tab   \cf4 str\cf3  = \cf4 ch\cf3  + \cf4 str\cf3 ;\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "reverce string : "\cf3 +\cf4 str\cf3 );\cf0\f0\par
+\fs22\par
+OR\par
+\par
+\cf3\f2\fs20  \f1\lang1033        \f2\lang9 String \cf4 name\cf3  = \cf6 "abcd"\cf3 ;\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "original string: "\cf3 +\cf4 name\cf3 );\cf0\par
+\cf3\tab   StringBuilder \cf4 s\cf3  = \cf2\b new\cf3\b0  StringBuilder(\cf4 name\cf3 );\cf0\par
+\cf3           \cf4 s\cf3 .reverse();\cf0\par
+\cf3           System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 s\cf3 );\cf0\f0\par
+\fs22\par
+OR\par
+\cf3\f2\fs24  \fs20 String \cf4 name\cf3  = \cf6 "abcd"\cf3 ;\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf6 "original string: "\cf3 +\cf4 name\cf3 );\cf0\par
+\cf3\tab\cf0\par
+\cf3\tab   \cf2\b char\cf3\b0  \cf4\ul ch\cf3\ulnone ;\cf0\par
+\cf3\tab   \cf2\b char\cf3\b0  \cf4 str\cf3 ;\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .\highlight8 print\highlight0 (\cf6 "reverce string : "\cf3 );\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =\cf4 name\cf3 .length()-1; \cf4 i\cf3 >=0;\cf4 i\cf3 --) \{\cf0\par
+\cf3\tab\tab   \cf4 str\cf3  = \cf4 name\cf3 .charAt(\cf4 i\cf3 );\cf0\par
+\cf3\tab\tab   System.\cf5\b\i out\cf3\b0\i0 .print(\cf4 str\cf3 );\cf0\par
+\cf3\tab   \}\cf0\f0\par
+\fs22\par
+\par
+\cf1 *\highlight11\f2\fs24 remove all the junks characters\cf0\highlight0\f0\fs22\par
+\cf10\f2\fs20 //Q: remove all the junks characters\cf0\par
+\cf3\tab\tab String \cf4 s\cf3  = \cf6 "@^%$#@*ninos123#@!"\cf3 ;\cf0\par
+\cf3\tab\tab\cf10 //replace all junks characters with the blank\cf0\par
+\cf3\tab\tab  \cf4 s\cf3  = \cf4 s\cf3 .replaceAll(\cf6 "[^a-zA-Z0-9]"\cf3 , \cf6 ""\cf3 );\cf0\par
+\cf3\tab\tab  System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 s\cf3 );\cf0\f0\par
+\fs22 ans:\par
+\cf3\f2\fs24 ninos123\par
+\par
+\par
+\cf1\f1\lang1033 *remove white spaces in String\par
+\cf3\fs20              \f2 String \cf4 s\cf3  = \cf6 " nino s 123 "\cf3 ;\cf0\par
+\cf3\tab\tab\cf4 s\cf3  = \cf4 s\cf3 .replaceAll(\cf6 "[\\\\s]"\cf3 , \cf6 ""\cf3 );\cf0\par
+\cf3\tab\tab System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 s\cf3 );\cf0\f0\lang9\par
+\fs22 ans:\par
+\cf3\f2\fs24 ninos123\cf0\par
+\f0\fs22\par
+\par
+\cf1 *count numbers of letters in string\par
+\cf3\f2\fs24  \fs20 String \cf4 s\cf3  = \cf6 "ninos"\cf3 ;\cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4\highlight9 count\cf3\highlight0  = 0;\cf0\par
+\cf3\tab   \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 s\cf3 .length(); \cf4 i\cf3 ++) \{\cf0\par
+\cf3\tab\tab   \cf4 s\cf3 .charAt(\cf4 i\cf3 );\cf0\par
+\cf3\tab\tab   \cf4\highlight9 count\cf3\highlight0 ++;\cf0\par
+\cf3\tab   \}\cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf4\highlight8 count\cf3\highlight0 );\par
+\f1\lang1033 ans:\par
+5\par
+\par
+\cf1 *count how many 'a' in string\par
+\cf3\f2\fs24\tab   String \cf4 s\cf3  = \cf6 "java in the master"\cf3 ;\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 total_length\cf3  = \cf4 s\cf3 .length();\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   String \cf4 s1\cf3  = \cf4 s\cf3 .replaceAll(\cf6 "a"\cf3 , \cf6 ""\cf3 );\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 totalAfterRemove\cf3  = \cf4 s1\cf3 .length();\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   \cf2\b int\cf3\b0  \cf4 result\cf3  = \cf4 total_length\cf3  - \cf4 totalAfterRemove\cf3 ;\cf0\par
+\cf3\tab   \cf0\par
+\cf3\tab   System.\cf5\b\i out\cf3\b0\i0 .println(\cf4 result\cf3 );\par
+\f1 ans:\par
+3\fs20\par
+\par
+\par
+\par
+\cf0\f0\lang9\par
+\fs22\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\cf1 * additional of 2 dimention of array\cf0\par
+\cf2\b\f2\fs20 package\cf3\b0  demo;\cf0\par
+\par
+\cf2\b public\cf3\b0  \cf2\b class\cf3\b0  Demo \{\cf0\par
+\par
+\cf3\tab\cf2\b public\cf3\b0  \cf2\b static\cf3\b0  \cf2\b void\cf3\b0  main(String[] \cf4 args\cf3 ) \{\cf0\par
+\cf3\tab\tab\cf0\par
+\cf3      \cf2\b int\cf3\b0 [][] \cf4 a\cf3  = \{\cf0\par
+\cf3     \tab\tab           \{11 ,22 ,33, 44, 55\},\cf0\par
+\cf3     \tab\tab           \{10 ,20 ,30, 40, 50\},\cf0\par
+\cf3     \tab\tab           \{100,200,300,400\}\cf0\par
+\cf3     \tab\tab  \cf0\par
+\cf3                     \}; \cf0\par
+\cf3      \cf0\par
+\cf3      \cf2\b int\cf3\b0 [][] \cf4 b\cf3  = \{\cf0\par
+\cf3\tab           \{1 ,2 ,3, 4, 5\},\cf0\par
+\cf3\tab           \{6 ,7 ,8, 9, 10\},\cf0\par
+\cf3\tab           \{11,21,30,40\}\cf0\par
+\cf3\tab  \cf0\par
+\cf3            \}; \cf0\par
+\cf3\tab\cf0\par
+\par
+\cf3          \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 a\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab  \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =0;\cf4 j\cf3 <\cf4 a\cf3 [\cf4 i\cf3 ].\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3         \tab\tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .print(\cf4 a\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ]+ \cf6 " "\cf3 );\cf0\par
+\cf3         \tab  \}\cf0\par
+\cf3         \tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3          \}\cf0\par
+\cf3          \cf0\par
+\cf3          \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3      \cf0\par
+\cf3          \cf0\par
+\cf3          \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 b\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab  \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =0;\cf4 j\cf3 <\cf4 b\cf3 [\cf4 i\cf3 ].\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3         \tab\tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .print(\cf4 b\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ]+ \cf6 " "\cf3 );\cf0\par
+\cf3         \tab  \}\cf0\par
+\cf3         \tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3          \}\cf0\par
+\cf3      \cf0\par
+\cf3          \cf0\par
+\cf3          \cf0\par
+\cf3          \cf0\par
+\cf3          \cf2\b int\cf3\b0 [][] \cf4 c\cf3  = \cf2\b new\cf3\b0  \cf2\b int\cf3\b0 [3][3];  \cf0\par
+\cf3          \cf0\par
+\cf3          \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 c\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab  \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =0; \cf4 j\cf3 <\cf4 c\cf3 [\cf4 i\cf3 ].\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3         \tab\tab  \cf4 c\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ] = \cf4 a\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ] + \cf4 b\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ];\cf0\par
+\cf3         \tab  \}\cf0\par
+\cf3         \tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3          \}\cf0\par
+\cf3          \cf0\par
+\cf3          \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 i\cf3 =0; \cf4 i\cf3 <\cf4 c\cf3 .\cf5 length\cf3 ;\cf4 i\cf3 ++) \{\cf0\par
+\cf3         \tab  \cf2\b for\cf3\b0 (\cf2\b int\cf3\b0  \cf4 j\cf3 =0;\cf4 j\cf3 <\cf4 c\cf3 [\cf4 i\cf3 ].\cf5 length\cf3 ;\cf4 j\cf3 ++) \{\cf0\par
+\cf3         \tab\tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .print(\cf4 c\cf3 [\cf4 i\cf3 ][\cf4 j\cf3 ]+ \cf6 " "\cf3 );\cf0\par
+\cf3         \tab  \}\cf0\par
+\cf3         \tab  \highlight8 System\highlight0 .\cf5\b\i out\cf3\b0\i0 .println();\cf0\par
+\cf3          \}\cf0\par
+\cf3         \cf0\par
+\cf3\tab\}\cf0\par
+\par
+\cf3\}\cf0\par
+\f0\fs22\par
+\par
+ANS:\par
+\cf3\f2\fs20 11 22 33 44 55 \cf0\par
+\cf3 10 20 30 40 50 \cf0\par
+\cf3 100 200 300 400 \cf0\par
+\par
+\cf3 1 2 3 4 5 \cf0\par
+\cf3 6 7 8 9 10 \cf0\par
+\cf3 11 21 30 40 \cf0\par
+\par
+\par
+\cf3 12 24 36 \cf0\par
+\cf3 16 27 38 \cf0\par
+\cf3 111 221 330\cf0\f0\fs22\par
+}
+ 
